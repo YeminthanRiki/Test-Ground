@@ -47,9 +47,16 @@ public class App {
 
     /**
      * A method to output print messages with cyan color
+     *
      * @param message Get a string message to print
+     * @return
      */
-    public static void printCyanMessage(String message) {
+    public void printCyanMessage(String message) {
+        if (message == null)
+        {
+            System.out.println("No message to print");
+            return;
+        }
         // ANSI escape code for red text
         String redColor = "\u001B[36m";
         // ANSI escape code to reset text color to default
@@ -502,40 +509,46 @@ public class App {
         Grouped methods to output required tasks
      */
     public void CR2(){
-        ArrayList<World> country;
-        ArrayList<World> city;
+        ArrayList<World> countriesWorld;
+        ArrayList<World> countriesContinent;
+        ArrayList<World> countriesRegion;
+        ArrayList<World> citiesWorld;
+        ArrayList<World> citiesContinent;
+        ArrayList<World> citiesRegion;
+        ArrayList<World> citiesCountry;
+        ArrayList<World> citiesDistrict;
 
         printCyanMessage("All the countries in the world organized by largest to smallest population");
-        country = getCountryWorld();
-        displayCountry(country);
+        countriesWorld = getCountryWorld();
+        displayCountry(countriesWorld);
 
         printCyanMessage("All the countries in a continent organized by largest to smallest population");
-        country = getCountryCont();
-        displayCountry(country);
+        countriesContinent = getCountryCont();
+        displayCountry(countriesContinent);
 
         printCyanMessage("All the countries in a region organized by largest to smallest population");
-        country = getCountryRegion();
-        displayCountry(country);
+        countriesRegion = getCountryRegion();
+        displayCountry(countriesRegion);
 
         printCyanMessage("All the Cities in the world organized by largest to smallest population");
-        city = getCityWorld();
-        displayCities(city);
+        citiesWorld = getCityWorld();
+        displayCities(citiesWorld);
 
         printCyanMessage("All the Cities in a continent organized by largest to smallest population");
-        city = getCitiesByCont();
-        displayCities(city);
+        citiesContinent = getCitiesByCont();
+        displayCities(citiesContinent);
 
         printCyanMessage("All the Cities in a region organized by largest to smallest population");
-        city = getCitiesByRegion();
-        displayCities(city);
+        citiesRegion = getCitiesByRegion();
+        displayCities(citiesRegion);
 
         printCyanMessage("All the Cities in a Country organized by largest to smallest population");
-        city = getCitiesByCountry();
-        displayCities(city);
+        citiesCountry = getCitiesByCountry();
+        displayCities(citiesCountry);
 
         printCyanMessage("All the Cities in a District organized by largest to smallest population");
-        city = getCitiesByDistrict();
-        displayCities(city);
+        citiesDistrict = getCitiesByDistrict();
+        displayCities(citiesDistrict);
     }
 
     /*
