@@ -439,12 +439,19 @@ public class App {
         Columns: "Code", "Name", "Continent", "Region", "Population", "Capital"
      */
     public void displayCountry(ArrayList<World> country) {
+        if (country == null)
+        {
+            System.out.println("No countries");
+            return;
+        }
         // Print header
         System.out.printf("%-5s %-49s %-14s %-25s %-13s %10s%n",
                 "Code", "Name", "Continent", "Region", "Population", "Capital");
 
         // Loop over all countries in the list
         for (World world : country) {
+            if (world == null)
+                continue;
             String world_str =
                     String.format("%-5s %-49s %-14s %-25s %-13s %10s",
                             world.Code, world.CountryName, world.Continent, world.Region, world.CountryPopulation, world.Capital);
